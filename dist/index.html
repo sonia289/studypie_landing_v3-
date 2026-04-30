@@ -15,30 +15,18 @@
         div[data-name="상단 띠배너"] {
           background: transparent !important;
         }
-        /* 내부 375px 컨테이너에 피그마 디자인 적용 */
+        /* 내부 375px 컨테이너: 그라디언트 배경 */
         div[data-name="상단 띠배너"] > div {
           background: linear-gradient(91deg, #FF76D5 0.08%, #435AF7 99.92%) !important;
-          display: inline-flex !important;
-          padding: 7.102px 14.544px 6.757px 84.488px !important;
-          justify-content: flex-end !important;
-          align-items: center !important;
-          gap: 7.616px !important;
-          box-sizing: border-box !important;
         }
-        /* 텍스트 그룹: inset-0(전체채움) → 피그마 위치(left:84.49px, 수직중앙) */
+        /* 텍스트 그룹: 피그마 기준 left:84.49px, 수직중앙 */
         div[data-name="상단 띠배너"] > div > div:first-child {
-          position: absolute !important;
-          inset: unset !important;
-          left: 84.49px !important;
           top: 50% !important;
+          left: 84.49px !important;
           right: auto !important;
           bottom: auto !important;
           transform: translateY(-50%) !important;
           width: 206.025px !important;
-          display: flex !important;
-          flex-direction: column !important;
-          align-items: center !important;
-          justify-content: center !important;
         }
         /* 메인 콘텐츠와 띠배너 사이 간격 제거 */
         div[data-name="1"] {
