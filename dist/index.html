@@ -57,9 +57,12 @@
         div[data-name="상단 띠배너"] > div > div:last-child p {
           font-size: 9.5px !important;
         }
-        /* 히어로: 배너 바로 아래 (top:44px 오프셋 제거) */
+        /* 히어로: 배너 바로 아래, 새 디자인 높이 고정 */
         div[data-name="1"] {
           top: 0 !important;
+          height: 300px !important;
+          overflow: hidden !important;
+          background: #000 !important;
         }
         /* 메인 콘텐츠 패딩: 새 배너 높이(60px)에 맞춤 */
         div.mx-auto.origin-top {
@@ -81,6 +84,58 @@
             '<div style="padding:40px;color:red;font-size:16px">' +
             '<h2>Promise Error</h2><pre>' + (e.reason && e.reason.stack || e.reason) + '</pre></div>';
         });
+      </script>
+      <script>
+      (function() {
+        var done = false;
+        function buildHero(el) {
+          if (done) return;
+          done = true;
+          el.style.setProperty('height', '300px', 'important');
+          el.style.setProperty('overflow', 'hidden', 'important');
+          el.style.setProperty('background', '#000', 'important');
+          el.innerHTML =
+            '<div style="position:absolute;top:0;left:0;width:375px;height:300px;display:grid;grid-template-columns:repeat(3,125px);grid-template-rows:repeat(3,100px);gap:0;">' +
+              '<img src="/assets/hero-course-1.png" style="width:125px;height:100px;object-fit:cover;">' +
+              '<img src="/assets/hero-course-2.png" style="width:125px;height:100px;object-fit:cover;">' +
+              '<img src="/assets/hero-course-3.png" style="width:125px;height:100px;object-fit:cover;">' +
+              '<img src="/assets/hero-course-4.png" style="width:125px;height:100px;object-fit:cover;">' +
+              '<img src="/assets/hero-course-5.png" style="width:125px;height:100px;object-fit:cover;">' +
+              '<img src="/assets/hero-course-6.png" style="width:125px;height:100px;object-fit:cover;">' +
+              '<img src="/assets/hero-course-7.png" style="width:125px;height:100px;object-fit:cover;">' +
+              '<img src="/assets/hero-course-8.png" style="width:125px;height:100px;object-fit:cover;">' +
+              '<img src="/assets/hero-course-9.png" style="width:125px;height:100px;object-fit:cover;">' +
+            '</div>' +
+            '<div style="position:absolute;top:0;left:0;width:375px;height:300px;background:radial-gradient(ellipse at 50% 50%,transparent 10%,rgba(0,0,0,0.72) 100%);pointer-events:none;"></div>' +
+            '<div style="position:absolute;top:68px;left:-90px;width:580px;height:30px;background:#435af7;transform:rotate(-17.75deg);display:flex;align-items:center;overflow:hidden;">' +
+              '<span style="color:#fff;font-size:12px;font-weight:700;white-space:nowrap;letter-spacing:0.06em;padding-left:8px;">비즈니스 영어 패키지 73%~&nbsp;&nbsp;&nbsp;&nbsp;비즈니스 영어 패키지 73%~&nbsp;&nbsp;&nbsp;&nbsp;비즈니스 영어 패키지 73%~&nbsp;&nbsp;&nbsp;&nbsp;비즈니스 영어 패키지 73%~</span>' +
+            '</div>' +
+            '<div style="position:absolute;top:0;left:0;width:375px;height:300px;background:rgba(0,0,0,0.36);pointer-events:none;"></div>' +
+            '<div style="position:absolute;top:154px;left:-90px;width:580px;height:30px;background:linear-gradient(90.5deg,#435AF7 0%,#3940C9 30%,#5C95FF 65%,#121A4E 100%);transform:rotate(-7.24deg);display:flex;align-items:center;overflow:hidden;">' +
+              '<span style="color:#fff;font-size:12px;font-weight:700;white-space:nowrap;letter-spacing:0.06em;padding-left:8px;">비즈니스 영어 패키지 64%~&nbsp;&nbsp;&nbsp;&nbsp;비즈니스 영어 패키지 64%~&nbsp;&nbsp;&nbsp;&nbsp;비즈니스 영어 패키지 64%~&nbsp;&nbsp;&nbsp;&nbsp;비즈니스 영어 패키지 64%~</span>' +
+            '</div>' +
+            '<div style="position:absolute;bottom:0;left:0;width:375px;height:120px;background:linear-gradient(to top,rgba(0,0,0,0.94) 0%,transparent 100%);pointer-events:none;"></div>' +
+            '<div style="position:absolute;bottom:10px;left:14px;transform:rotate(-8deg) skewX(-8deg);transform-origin:left bottom;line-height:1;">' +
+              '<div style="color:#fff;font-size:20px;font-weight:800;letter-spacing:-0.02em;margin-bottom:2px;">스터디파이</div>' +
+              '<div style="font-size:46px;font-weight:900;line-height:0.92;background:linear-gradient(90deg,#435AF7,#FF76D5);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-0.04em;">비즈니스</div>' +
+              '<div style="font-size:46px;font-weight:900;line-height:0.92;background:linear-gradient(90deg,#FF76D5,#435AF7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-0.04em;">영어패키지</div>' +
+            '</div>' +
+            '<img src="/assets/hero-star-1.png" style="position:absolute;left:317px;top:100px;width:22px;height:22px;object-fit:contain;pointer-events:none;">' +
+            '<img src="/assets/hero-star-2.png" style="position:absolute;left:58px;top:76px;width:18px;height:18px;object-fit:contain;pointer-events:none;">' +
+            '<img src="/assets/hero-star-3.png" style="position:absolute;left:266px;top:41px;width:18px;height:18px;object-fit:contain;pointer-events:none;">';
+        }
+        function tryReplace() {
+          var hero = document.querySelector('div[data-name="1"]');
+          if (hero && !done) { buildHero(hero); return true; }
+          return done;
+        }
+        if (!tryReplace()) {
+          var obs = new MutationObserver(function(_, observer) {
+            if (tryReplace()) observer.disconnect();
+          });
+          obs.observe(document.body, { childList: true, subtree: true });
+        }
+      })();
       </script>
     </body>
   </html>
