@@ -8,31 +8,64 @@
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
       <link href="https://fonts.googleapis.com/css2?family=WindSong&display=swap" rel="stylesheet" />
-      <script type="module" crossorigin src="/assets/index-v2.js"></script>
+      <script type="module" crossorigin src="/assets/index-v4.js"></script>
       <link rel="stylesheet" crossorigin href="/assets/index-C6Kunt3Y.css">
       <style>
-        /* 외부 전체너비 div 배경 제거 */
+        /* 외부 배너: 전체 뷰포트 대신 375px 너비로 제한, 중앙 정렬 */
         div[data-name="상단 띠배너"] {
           background: transparent !important;
+          width: 375px !important;
+          left: 50% !important;
+          right: auto !important;
+          transform: translateX(-50%) !important;
+          height: 60px !important;
+          overflow: hidden !important;
         }
-        /* 내부 375px 컨테이너: 그라디언트 배경 */
+        /* 내부 배너 컨테이너: 그라디언트 배경, zoom 고정 */
         div[data-name="상단 띠배너"] > div {
-          background: linear-gradient(91deg, #FF76D5 0.08%, #435AF7 99.92%) !important;
+          background: linear-gradient(95.83deg, #FF76D5 0%, #435AF7 99.92%) !important;
+          zoom: 1 !important;
+          height: 60px !important;
+          width: 375px !important;
         }
-        /* 텍스트 그룹: 피그마 기준 left:84.49px, 수직중앙 */
+        /* 텍스트 그룹: 피그마 기준 left:84.49px, 수직 중앙 */
         div[data-name="상단 띠배너"] > div > div:first-child {
           top: 50% !important;
           left: 84.49px !important;
           right: auto !important;
           bottom: auto !important;
           transform: translateY(-50%) !important;
-          width: 206.025px !important;
+          width: 206px !important;
         }
-        /* 메인 콘텐츠와 띠배너 사이 간격 제거 */
+        /* 라벨 텍스트 크기 증가 */
+        div[data-name="상단 띠배너"] > div > div:first-child p:first-child {
+          font-size: 11px !important;
+          width: auto !important;
+        }
+        /* 카운트다운 텍스트 크기 증가 */
+        div[data-name="상단 띠배너"] > div > div:first-child p:last-child {
+          font-size: 15px !important;
+          width: auto !important;
+        }
+        /* 버튼 크기 조정 */
+        div[data-name="상단 띠배너"] > div > div:last-child {
+          width: 70px !important;
+          height: 22px !important;
+          right: 10px !important;
+        }
+        /* 버튼 텍스트 */
+        div[data-name="상단 띠배너"] > div > div:last-child p {
+          font-size: 9.5px !important;
+        }
+        /* 히어로: 배너 바로 아래 (top:44px 오프셋 제거) */
         div[data-name="1"] {
           top: 0 !important;
         }
-      </style>
+        /* 메인 콘텐츠 패딩: 새 배너 높이(60px)에 맞춤 */
+        div.mx-auto.origin-top {
+          padding-top: 60px !important;
+        }
+</style>
     </head>
 
     <body>
