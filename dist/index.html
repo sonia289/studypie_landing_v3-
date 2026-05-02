@@ -127,27 +127,32 @@
               '<p style="position:absolute;left:218.64px;top:8.11px;transform:translateX(-50%);color:#fff;font-size:10.58px;font-weight:500;white-space:nowrap;margin:0;">비즈니스 영어 패키지 73%~</p>' +
               '<p style="position:absolute;left:356.16px;top:8.11px;transform:translateX(-50%);color:#fff;font-size:10.58px;font-weight:500;white-space:nowrap;margin:0;">비즈니스 영어 패키지 73%~</p>' +
             '</div>' +
-            /* 4. 어두운 오버레이 */
-            '<div style="position:absolute;top:0;left:0;width:375px;height:300px;background:rgba(0,0,0,0.32);pointer-events:none;"></div>' +
-            /* 5. 텍스트 그룹 (스터디파이 / 비즈니스 / 영어패키지) */
-            '<div style="position:absolute;top:62px;left:10px;transform:rotate(-8deg);transform-origin:left top;line-height:1;">' +
-              '<div style="color:#fff;font-size:20px;font-weight:800;letter-spacing:-0.02em;margin-bottom:4px;">스터디파이</div>' +
-              '<div style="font-size:52px;font-weight:900;line-height:0.9;background:linear-gradient(90deg,#435AF7,#FF76D5);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-0.04em;">비즈니스</div>' +
-              '<div style="font-size:52px;font-weight:900;line-height:0.9;background:linear-gradient(90deg,#FF76D5,#435AF7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-0.04em;">영어패키지</div>' +
-            '</div>' +
-            /* 6. 하단 대각선 배너 (3:82) — 피그마 정확 좌표 */
-            /* center: (187.5, 211.4) → top=192px, left=-97px, origin=center */
+            /* 4. 어두운 오버레이 (3:81) — top:11px, opacity:0.69 */
+            '<div style="position:absolute;top:11px;left:0;width:375px;height:300px;background:rgba(0,0,0,0.69);pointer-events:none;"></div>' +
+            /* 5. 하단 대각선 배너 (3:82) — 피그마 정확 좌표, dark overlay 위 */
             '<div style="position:absolute;left:-97px;top:192px;width:569px;height:38.65px;background:linear-gradient(90.48deg,#435AF7 0%,#3940C9 41.4%,#5C95FF 60.75%,#121A4E 92.2%);transform:rotate(-7.24deg);transform-origin:center;overflow:hidden;">' +
               '<p style="position:absolute;left:102.66px;top:10.57px;transform:translateX(-50%);color:#fff;font-size:13.8px;font-weight:700;white-space:nowrap;margin:0;">비즈니스 영어 패키지 64%~</p>' +
               '<p style="position:absolute;left:284.87px;top:10.57px;transform:translateX(-50%);color:#fff;font-size:13.8px;font-weight:700;white-space:nowrap;margin:0;">비즈니스 영어 패키지 64%~</p>' +
               '<p style="position:absolute;left:464.31px;top:10.57px;transform:translateX(-50%);color:#fff;font-size:13.8px;font-weight:700;white-space:nowrap;margin:0;">비즈니스 영어 패키지 64%~</p>' +
             '</div>' +
-            /* 7. 하단 페이드 그라디언트 */
-            '<div style="position:absolute;bottom:0;left:0;width:375px;height:80px;background:linear-gradient(to top,rgba(0,0,0,0.85) 0%,transparent 100%);pointer-events:none;"></div>' +
-            /* 8. 별 장식 */
-            '<img src="/assets/hero-star-1.png" style="position:absolute;left:317px;top:100px;width:24px;height:24px;object-fit:contain;pointer-events:none;">' +
-            '<img src="/assets/hero-star-2.png" style="position:absolute;left:58px;top:76px;width:20px;height:20px;object-fit:contain;pointer-events:none;">' +
-            '<img src="/assets/hero-star-3.png" style="position:absolute;left:266px;top:41px;width:20px;height:20px;object-fit:contain;pointer-events:none;">';
+            /* 6. 하단 페이드 그라디언트 (3:86) */
+            '<div style="position:absolute;bottom:0;left:0;width:375px;height:53px;background:linear-gradient(to bottom,rgba(0,0,0,0) 9.3%,rgba(0,0,0,1) 88.5%);pointer-events:none;"></div>' +
+            /* 7. 영어패키지 (3:87) — left:62.45, top:109.84, 50.237px, #fc8aff→#0a92ff */
+            '<div style="position:absolute;left:62.45px;top:109.84px;width:249.548px;height:94.072px;display:flex;align-items:center;justify-content:center;">' +
+              '<p style="transform:rotate(-8deg) skewX(-8deg) scaleY(0.99);font-size:50.237px;font-weight:900;line-height:118.3%;white-space:nowrap;margin:0;background:linear-gradient(90deg,#fc8aff,#0a92ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">영어패키지</p>' +
+            '</div>' +
+            /* 8. 비즈니스 (3:88) — left:88.29, top:54.85, 50.237px, #0a92ff→#fc8aff */
+            '<div style="position:absolute;left:88.29px;top:54.85px;width:199.044px;height:86.974px;display:flex;align-items:center;justify-content:center;">' +
+              '<p style="transform:rotate(-8deg) skewX(-8deg) scaleY(0.99);font-size:50.237px;font-weight:900;line-height:118.3%;white-space:nowrap;margin:0;background:linear-gradient(90deg,#0a92ff,#fc8aff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">비즈니스</p>' +
+            '</div>' +
+            /* 9. 스터디파이 (3:89) — left:112, top:28, 27.086px, white */
+            '<div style="position:absolute;left:112px;top:28px;width:134.676px;height:50.928px;display:flex;align-items:center;justify-content:center;">' +
+              '<p style="transform:rotate(-8deg) skewX(-8deg) scaleY(0.99);font-size:27.086px;font-weight:700;line-height:118.3%;white-space:nowrap;margin:0;color:#fff;">스터디파이</p>' +
+            '</div>' +
+            /* 10. 별 장식 (3:90 w=12.3, 3:93 w=26, 3:98 w=11.5) */
+            '<img src="/assets/hero-star-1.png" style="position:absolute;left:317px;top:100px;width:12.316px;height:24px;object-fit:contain;pointer-events:none;">' +
+            '<img src="/assets/hero-star-2.png" style="position:absolute;left:58px;top:76px;width:26px;height:24px;object-fit:contain;pointer-events:none;">' +
+            '<img src="/assets/hero-star-3.png" style="position:absolute;left:266px;top:41.35px;width:11.539px;height:10.651px;object-fit:contain;pointer-events:none;">';
         }
         function tryReplace() {
           var hero = document.querySelector('div[data-name="1"]');
