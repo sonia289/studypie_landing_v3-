@@ -98,18 +98,27 @@
           el.style.setProperty('height', '300px', 'important');
           el.style.setProperty('overflow', 'hidden', 'important');
           el.style.setProperty('background', '#000', 'important');
+          /* 피그마 node 3:57 강의 이미지 타일 — 정확한 좌표 반영 */
+          var M1='url("data:image/svg+xml,%3Csvg viewBox=\'0 0 375 395\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M375 0H0V395H375V0Z\' fill=\'black\'/%3E%3C/svg%3E")';
+          var M2='url("data:image/svg+xml,%3Csvg viewBox=\'0 0 507.671 389.618\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M490.911 389.618C324.375 351.872 165.289 291.467 0 291.467V98.1504C165.289 98.1504 324.375 37.7434 490.911 0C513.258 128.757 513.258 260.859 490.911 389.615V389.618Z\' fill=\'black\'/%3E%3C/svg%3E")';
+          function tile(l,t,w,h,src,mp1,mp2) {
+            var mk = '-webkit-mask-image:'+M1+','+M2+';-webkit-mask-position:'+mp1+','+mp2+';-webkit-mask-repeat:no-repeat,no-repeat;mask-image:'+M1+','+M2+';mask-position:'+mp1+','+mp2+';mask-repeat:no-repeat,no-repeat;';
+            return '<div style="position:absolute;left:'+l+'px;top:'+t+'px;width:'+w+'px;height:'+h+'px;overflow:hidden;'+mk+'"><img src="/assets/'+src+'" style="position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;display:block;max-width:none;"></div>';
+          }
           el.innerHTML =
-            /* 1. 코스 이미지 3×3 그리드 배경 */
-            '<div style="position:absolute;top:0;left:0;width:375px;height:300px;display:grid;grid-template-columns:repeat(3,125px);grid-template-rows:repeat(3,100px);gap:0;">' +
-              '<img src="/assets/hero-course-1.png" style="width:125px;height:100px;object-fit:cover;">' +
-              '<img src="/assets/hero-course-2.png" style="width:125px;height:100px;object-fit:cover;">' +
-              '<img src="/assets/hero-course-3.png" style="width:125px;height:100px;object-fit:cover;">' +
-              '<img src="/assets/hero-course-4.png" style="width:125px;height:100px;object-fit:cover;">' +
-              '<img src="/assets/hero-course-5.png" style="width:125px;height:100px;object-fit:cover;">' +
-              '<img src="/assets/hero-course-6.png" style="width:125px;height:100px;object-fit:cover;">' +
-              '<img src="/assets/hero-course-7.png" style="width:125px;height:100px;object-fit:cover;">' +
-              '<img src="/assets/hero-course-8.png" style="width:125px;height:100px;object-fit:cover;">' +
-              '<img src="/assets/hero-course-9.png" style="width:125px;height:100px;object-fit:cover;">' +
+            '<div style="position:absolute;top:0;left:0;width:375px;height:300px;">' +
+              /* 왼쪽 열 */
+              tile(-5.7,-38,133.9,107.5,'hero-course-5.png','5.664px -99.805px','-61.664px -51.398px') +
+              tile(-5.3,70.3,134.2,93.5,'hero-course-1.png','5.336px -200.125px','-61.992px -151.719px') +
+              tile(-5.6,164.7,133.6,107.5,'hero-course-8.png','5.594px -287.586px','-61.734px -239.18px') +
+              /* 가운데 열 */
+              tile(133.7,-84.2,138.2,143.3,'hero-course-6.png','-133.656px -56.969px','-200.984px -8.563px') +
+              tile(137.4,57,137,120,'hero-course-2.png','-137.367px -187.805px','-204.695px -139.398px') +
+              tile(134.1,174.2,138.8,143.4,'hero-course-4.png','-134.066px -296.445px','-201.395px -248.039px') +
+              /* 오른쪽 열 */
+              tile(269.7,-128.1,148.5,171.5,'hero-course-7.png','-269.699px -16.281px','-337.027px 32.125px') +
+              tile(279.5,41.1,143,152.3,'hero-course-3.png','-279.535px -173.125px','-346.863px -124.719px') +
+              tile(270.2,191.1,148.5,171.8,'hero-course-9.png','-270.145px -312.047px','-337.473px -263.641px') +
             '</div>' +
             /* 2. 비네팅 */
             '<div style="position:absolute;top:0;left:0;width:375px;height:300px;background:radial-gradient(ellipse at 50% 50%,transparent 5%,rgba(0,0,0,0.65) 100%);pointer-events:none;"></div>' +
