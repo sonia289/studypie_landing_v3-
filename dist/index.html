@@ -36,31 +36,37 @@
           bottom: auto !important;
           transform: translateY(-50%) !important;
           width: 206px !important;
+          overflow: hidden !important;
         }
-        /* 라벨 텍스트 크기 증가 */
+        /* 라벨 텍스트 */
         div[data-name="상단 띠배너"] > div > div:first-child p:first-child {
-          font-size: 11px !important;
-          width: auto !important;
+          font-size: 9.5px !important;
+          width: 100% !important;
+          white-space: normal !important;
+          word-break: keep-all !important;
+          text-align: center !important;
         }
-        /* 카운트다운 텍스트 크기 증가 */
+        /* 카운트다운 텍스트 */
         div[data-name="상단 띠배너"] > div > div:first-child p:last-child {
-          font-size: 15px !important;
-          width: auto !important;
+          font-size: 12.5px !important;
+          width: 100% !important;
+          white-space: normal !important;
+          text-align: center !important;
         }
         /* 버튼 크기 조정 */
         div[data-name="상단 띠배너"] > div > div:last-child {
-          width: 70px !important;
+          width: 66px !important;
           height: 22px !important;
-          right: 10px !important;
+          right: 14px !important;
         }
         /* 버튼 텍스트 */
         div[data-name="상단 띠배너"] > div > div:last-child p {
-          font-size: 9.5px !important;
+          font-size: 9px !important;
         }
         /* 히어로: 배너 바로 아래, 새 디자인 고정 */
         div[data-name="1"] {
           top: 0 !important;
-          height: 300px !important;
+          height: 278px !important;
           width: 375px !important;
           overflow: hidden !important;
           background: #000 !important;
@@ -95,7 +101,7 @@
           done = true;
           el.style.setProperty('position', 'relative', 'important');
           el.style.setProperty('width', '375px', 'important');
-          el.style.setProperty('height', '300px', 'important');
+          el.style.setProperty('height', '278px', 'important');
           el.style.setProperty('overflow', 'hidden', 'important');
           el.style.setProperty('background', '#000', 'important');
           /* 피그마 node 3:57 강의 이미지 타일 — 정확한 좌표 반영 */
@@ -103,7 +109,7 @@
             return '<div style="position:absolute;left:'+l+'px;top:'+t+'px;width:'+w+'px;height:'+h+'px;overflow:hidden;"><img src="/assets/'+src+'" style="position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;display:block;max-width:none;"></div>';
           }
           el.innerHTML =
-            '<div style="position:absolute;top:0;left:0;width:375px;height:300px;">' +
+            '<div style="position:absolute;top:0;left:0;width:375px;height:278px;">' +
               /* 왼쪽 열 */
               tile(-5.7,-38,133.9,107.5,'hero-course-5.png') +
               tile(-5.3,70.3,134.2,93.5,'hero-course-1.png') +
@@ -118,9 +124,9 @@
               tile(270.2,191.1,148.5,171.8,'hero-course-9.png') +
             '</div>' +
             /* 2. 비네팅 */
-            '<div style="position:absolute;top:0;left:0;width:375px;height:300px;background:radial-gradient(ellipse at 50% 50%,transparent 5%,rgba(0,0,0,0.65) 100%);pointer-events:none;"></div>' +
-            /* 3. 상단 대각선 배너 (3:76) — 메타데이터 bounding box center y=287.42 → top=272.6px */
-            '<div style="position:absolute;left:-21px;top:272.6px;width:435.876px;height:29.623px;background:#435AF7;transform:rotate(-17.75deg);transform-origin:center;overflow:hidden;">' +
+            '<div style="position:absolute;top:0;left:0;width:375px;height:278px;background:radial-gradient(ellipse at 50% 50%,transparent 5%,rgba(0,0,0,0.65) 100%);pointer-events:none;"></div>' +
+            /* 3. 상단 대각선 배너 (3:76) — wrapper top=74.02, h=161.075 → center_y=154.56 → top=139.75px */
+            '<div style="position:absolute;left:-21px;top:139.75px;width:435.876px;height:29.623px;background:#435AF7;transform:rotate(-17.75deg);transform-origin:center;overflow:hidden;">' +
               '<p style="position:absolute;left:78.98px;top:8.11px;transform:translateX(-50%);color:#fff;font-size:10.58px;font-weight:500;white-space:nowrap;margin:0;">비즈니스 영어 패키지 73%~</p>' +
               '<p style="position:absolute;left:218.64px;top:8.11px;transform:translateX(-50%);color:#fff;font-size:10.58px;font-weight:500;white-space:nowrap;margin:0;">비즈니스 영어 패키지 73%~</p>' +
               '<p style="position:absolute;left:356.16px;top:8.11px;transform:translateX(-50%);color:#fff;font-size:10.58px;font-weight:500;white-space:nowrap;margin:0;">비즈니스 영어 패키지 73%~</p>' +
@@ -128,9 +134,9 @@
             /* 4. 보조 그라디언트 (3:80) — x=-130, y=191, w=635, h=109 */
             '<div style="position:absolute;left:-130px;top:191px;width:635.465px;height:109.441px;background:linear-gradient(to bottom,rgba(0,0,0,0) 34.078%,rgba(0,0,0,1) 75.73%);pointer-events:none;"></div>' +
             /* 5. 어두운 오버레이 (3:81) — x=0, y=0 */
-            '<div style="position:absolute;top:0;left:0;width:375px;height:300px;background:rgba(0,0,0,0.69);pointer-events:none;"></div>' +
-            /* 6. 하단 대각선 배너 (3:82) — 메타데이터 bounding box center y=283.11 → top=263.8px */
-            '<div style="position:absolute;left:-97px;top:263.8px;width:569px;height:38.65px;background:linear-gradient(90.48deg,#435AF7 0%,#3940C9 41.4%,#5C95FF 60.75%,#121A4E 92.2%);transform:rotate(-7.24deg);transform-origin:center;overflow:hidden;">' +
+            '<div style="position:absolute;top:0;left:0;width:375px;height:278px;background:rgba(0,0,0,0.69);pointer-events:none;"></div>' +
+            /* 6. 하단 대각선 배너 (3:82) — wrapper top=156.4, h=110.038 → center_y=211.42 → top=192.09px */
+            '<div style="position:absolute;left:-97px;top:192.09px;width:568.698px;height:38.649px;background:linear-gradient(90.48deg,#435AF7 0%,#3940C9 41.4%,#5C95FF 60.75%,#121A4E 92.2%);transform:rotate(-7.24deg);transform-origin:center;overflow:hidden;">' +
               '<p style="position:absolute;left:102.66px;top:10.57px;transform:translateX(-50%);color:#fff;font-size:13.8px;font-weight:700;white-space:nowrap;margin:0;">비즈니스 영어 패키지 64%~</p>' +
               '<p style="position:absolute;left:284.87px;top:10.57px;transform:translateX(-50%);color:#fff;font-size:13.8px;font-weight:700;white-space:nowrap;margin:0;">비즈니스 영어 패키지 64%~</p>' +
               '<p style="position:absolute;left:464.31px;top:10.57px;transform:translateX(-50%);color:#fff;font-size:13.8px;font-weight:700;white-space:nowrap;margin:0;">비즈니스 영어 패키지 64%~</p>' +
